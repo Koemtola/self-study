@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input information</title>
+    <style>
+       
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        body{
+            position:absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+        h2{
+            text-align: center;
+        }
+        .object{
+            margin: auto;
+            width: 300px;
+            height: 250px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 15px;
+            color: black;
+            font-style:inherit;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid black;
+            box-shadow: 1px 1px 5px 4px black;
+
+        }
+        input{
+            height: 30px;
+            width: 160px;
+            padding-left: 5px;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+        }
+        input:hover{
+            height: 30px;
+            width: 160px;
+            padding-left: 5px;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            background-color: rgb(169, 172, 167);
+        }
+        #label-input{
+            padding-right: 20px;
+        }
+        button{
+            height: 30px;
+            width: 58px;
+            font-size: 20px;
+            background-color: rgb(255, 0, 0);
+            border-style: none;
+            border-radius: 5px;
+        }
+        button:hover{
+            height: 30px;
+            width: 58px;
+            font-size: 20px;
+            background-color: rgb(0, 21, 255);
+            border-style: none;
+            border-radius: 5px;
+        }
+        select {
+            color: rgb(0, 0, 255);
+            height: 30px;
+            width: 57px;
+            font-size: 18px;
+            border-radius: 5px;
+
+        }
+        option{
+            font-size: 20px;
+            color: rgb(0, 0, 255);
+
+        }
+        .subObject{
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="object">
+        <h2>Calculator</h2>
+        <div class="subObject">
+            <label id="label-input" for="">Number</label>
+            <input type="text" id="inputNumber1" placeholder="Type of number"><br>
+        </div>
+       <div class="subObject">
+            <label id="label-input" for="">Number</label>
+            <input type="text" id="inputNumber2"placeholder="Type of number"><br>
+       </div>
+       <div class="subObject">
+        <label for="">Choose a option</label>
+            <select id="option">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+            </select>
+            <button onclick="Calulate()">=</button><br>
+        </div>
+        <div class="subObject">
+            <label for="">The Result</label>
+            <input type="text" id="result"><br>
+        </div>
+   </div>   
+   <script>
+        <!-- ---------------------- function using javascript ---------------------- -->
+        function Calulate(){
+            var inputNumber1=parseFloat(document.getElementById('inputNumber1').value) ;
+            var inputNumber2=parseFloat(document.getElementById('inputNumber2').value) ;
+            var option1=document.getElementById('option').value;
+            if(option1==='+'){
+                var R=document.getElementById('result').value=inputNumber1+inputNumber2;
+            }else if(option1==='-'){
+                document.getElementById('result').value=inputNumber1-inputNumber2;
+            }
+            else if(option1==='x'){
+                document.getElementById('result').value=inputNumber1*inputNumber2;
+            }
+            else if(option1==='/'){
+                document.getElementById('result').value=inputNumber1/inputNumber2;
+            }
+        }
+   </script>
+</body>
+</html>
