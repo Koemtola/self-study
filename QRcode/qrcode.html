@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="qrbox">
+        <div class="item">
+            <h2>QR Code</h2>
+            <img src="qrcodesimple.jpg" alt="">
+            <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.youtube.com" alt="">    -->
+             <textarea name="" id="textarea" cols="30" rows="10" placeholder="Enter URL or Text here" ></textarea>
+             <button>Generator QR code</button>
+        </div>
+    </div>
+    <script>
+        let qrcode=select("img");
+        let qrtext=select("#textarea");
+        let qrbtn=select("button");
+
+      
+        qrbtn.addEventListener("click",generateQR); //condition(when we click on button)
+
+        function generateQR(){
+            let size="300x300";
+            let data=qrtext.value;  //data from user input
+            let baseURL="https://api.qrserver.com/v1/create-qr-code/";
+
+            let url=`${baseURL}?data=${data}&size=${size}`; //compbian code 
+            qrcode.src=url;
+        }
+        function select(element) {
+            return document.querySelector(element);
+        }
+       
+    </script>
+</body>
+</html>
